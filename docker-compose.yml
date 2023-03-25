@@ -1,0 +1,31 @@
+version: "3"
+services:
+  server:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      DB_USER: postgres
+      #this info would be managed with docker secrets
+      DB_DATABASE: parking
+      DB_PASSWORD: pwd
+      DB_HOST: postgres
+      DB_PORT: 5432
+      LOCAL_PORT: 4000
+    ports:
+      - "14000:4000"
+    command: npm run start
+    volumes:
+      - .:/parking-api/
+      - /parking-api/node_modules
+
+  postgres:
+    image: postgres:15.2
+    user: postgres
+    ports:
+      - "15432:5432"
+    environment:
+      #this info would be managed with docker secrets
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: parking
