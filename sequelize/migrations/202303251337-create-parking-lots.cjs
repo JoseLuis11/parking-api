@@ -30,5 +30,5 @@ module.exports = {
       }
     )
   },
-  down: queryInterface => queryInterface.dropTable('parking-lots')
+  down: queryInterface => queryInterface.dropTable('parking_lots')
 }
