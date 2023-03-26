@@ -15,9 +15,6 @@ services:
     ports:
       - "14000:4000"
     command: npm run start
-    volumes:
-      - .:/parking-api/
-      - /parking-api/node_modules
 
   postgres:
     image: postgres:15.2
