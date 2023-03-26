@@ -2,11 +2,11 @@ node_modules
 build
 .git
 .idea
+logs
 .gitignore
 .env
 npm-debug.log
 *.md
-logs
 docker-compose.yml
 .babelrc
 .eslintrc.json
