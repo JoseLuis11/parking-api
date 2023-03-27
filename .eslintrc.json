@@ -6,7 +6,13 @@
   },
   "rules": {
     "no-console": "warn",
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "object-curly-spacing": ["error", "always"],
+    "array-bracket-spacing": ["error", "never"],
+    "computed-property-spacing": ["error", "never"],
+    "max-len": ["error", { "code": 80, "tabWidth": 4 }],
+    "no-var": "error",
+    "space-infix-ops": "error"
   },
   "plugins": ["@typescript-eslint"],
   "extends": ["plugin:@typescript-eslint/recommended"]
