@@ -1,20 +1,25 @@
 const typeDefs = `#graphql
 
-type Contact {
-    id: ID!
-    phoneNumber: String
-}
-
 type ParkingLot {
     id: ID!
     name: String
     spots: Int
-    contact: Contact
-    parkingType: String
+    contact: String
+    parkingType: String,
+    createdAt: String
+}
+
+type CheckIn {
+    id: ID!
+    parkingId: Int
+    userType: String
+    checkedInAt: String
+    checkedOutAt: String
 }
 
 type Query {
     parkingLots: [ParkingLot]
+    checkIns: [CheckIn]
 }
 `;
 

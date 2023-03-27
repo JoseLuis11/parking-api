@@ -1,21 +1,11 @@
-const parkingLots = [
-  {
-    id: 1,
-    name: 'Andares',
-    spots: 123,
-    contact: {
-      id: 3,
-      phoneNumber: '+526461988493'
-    },
-    parkingType: 'PUBLIC'
-  }
-]
-
+import { ParkingLot } from '../../database/models/ParkingLot.js';
+import { CheckIn } from '../../database/models/CheckIn.js';
 
 const resolvers = {
   Query: {
-    parkingLots: () => parkingLots
-  },
+    parkingLots: () => ParkingLot.findAll(),
+    checkIns: () => CheckIn.findAll()
+  }
 };
 
 export default resolvers;
