@@ -5,12 +5,8 @@ services:
     depends_on:
       - postgres
     environment:
-      DB_USER: postgres
-      #this info would be managed with docker secrets
-      DB_DATABASE: parking
-      DB_PASSWORD: pwd
-      DB_HOST: postgres
-      DB_PORT: 5432
+      #this variable would be managed with a docker secret
+      DB_URL: postgresql://postgres:pwd@postgres:5432/parking
       LOCAL_PORT: 4000
     ports:
       - "14000:4000"
