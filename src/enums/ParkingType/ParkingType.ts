@@ -1,7 +1,7 @@
 enum ParkingType {
-  PUBLIC = 'PUBLIC',
-  PRIVATE = 'PRIVATE',
-  COURTESY = 'COURTESY'
+  PUBLIC = 'public',
+  PRIVATE = 'private',
+  COURTESY = 'courtesy'
 }
 
 export default ParkingType;

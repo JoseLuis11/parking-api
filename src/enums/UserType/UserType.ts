@@ -1,7 +1,7 @@
 enum UserType {
-  CORPORATE = 'CORPORATE',
-  PROVIDER = 'PROVIDER',
-  VISITOR = 'VISITOR'
+  CORPORATE = 'corporate',
+  PROVIDER = 'provider',
+  VISITOR = 'visitor'
 }
 
 export default UserType;
