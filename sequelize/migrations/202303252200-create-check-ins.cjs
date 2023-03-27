@@ -3,7 +3,7 @@ module.exports = {
     const helper = await import('../../build/enums/UserType/UserTypeHelper.js');
     const { getTypes: getUserTypes } = helper.default;
 
-    return queryInterface.createTable('check-ins', {
+    return queryInterface.createTable('check_ins', {
         id: {
           allowNull: false,
           autoIncrement: true,
@@ -26,6 +26,14 @@ module.exports = {
           allowNull: false,
           type: DataTypes.DATE
         },
+        createdAt: {
+          allowNull: false,
+          type: DataTypes.DATE
+        },
+        updatedAt: {
+          allowNull: true,
+          type: DataTypes.DATE
+        },
         checkedOutAt: {
           allowNull: true,
           type: DataTypes.DATE
@@ -36,5 +44,5 @@ module.exports = {
       }
     )
   },
-  down: queryInterface => queryInterface.dropTable('check-ins')
+  down: queryInterface => queryInterface.dropTable('check_ins')
 }
