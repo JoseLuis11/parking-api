@@ -10,4 +10,5 @@ npm-debug.log
 docker-compose.yml
 .babelrc
 .eslintrc.json
+nodemon.json
 Dockerfile

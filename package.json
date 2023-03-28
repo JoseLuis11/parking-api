@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run db:migrate && node ./build",
     "build": "npx tsc",
-    "dev": "nodemon --esm ./src/index.ts",
+    "dev": "nodemon",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:migrate-dev": "npm run build && npm run db:migrate",
     "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
