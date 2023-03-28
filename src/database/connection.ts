@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import accessEnv from './helpers/accessEnv.js';
-import models from './models/models.js';
+import models from './models/index.js';
 import dotenv from 'dotenv';
 
 //allows to use .env
