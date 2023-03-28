@@ -1,7 +1,6 @@
 module.exports = {
   up: async (queryInterface, DataTypes) => {
-    const helper = await import('../../build/enums/ParkingType/ParkingTypeHelper.js');
-    const { getTypes: getParkingTypes } = helper.default;
+    const ParkingTypeHelper = (await import('../../src/enums/ParkingType/ParkingTypeHelper.js')).default;
 
     return queryInterface.createTable('parking_lots', {
         id: {
@@ -29,7 +28,7 @@ module.exports = {
         },
         parkingType: {
           allowNull: false,
-          type: DataTypes.ENUM(getParkingTypes())
+          type: DataTypes.ENUM(ParkingTypeHelper.getTypes())
         },
         createdAt: {
           allowNull: false,

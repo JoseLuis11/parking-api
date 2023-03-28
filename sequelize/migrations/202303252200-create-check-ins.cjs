@@ -1,7 +1,6 @@
 module.exports = {
   up: async (queryInterface, DataTypes) => {
-    const helper = await import('../../build/enums/UserType/UserTypeHelper.js');
-    const { getTypes: getUserTypes } = helper.default;
+    const UserTypeHelper = (await import('../../src/enums/UserType/UserTypeHelper.js')).default;
 
     return queryInterface.createTable('check_ins', {
         id: {
@@ -20,7 +19,7 @@ module.exports = {
         },
         userType: {
           allowNull: false,
-          type: DataTypes.ENUM(getUserTypes()),
+          type: DataTypes.ENUM(UserTypeHelper.getTypes()),
         },
         checkedInAt: {
           allowNull: false,
