@@ -12,6 +12,9 @@
     "moduleResolution": "node",
     "experimentalDecorators": true
   },
+  "ts-node": {
+    "esm": true,
+  },
   "exclude": [
     "node_modules",
     "sequelize",
