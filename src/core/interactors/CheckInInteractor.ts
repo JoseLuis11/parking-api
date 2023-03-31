@@ -8,7 +8,10 @@ import errors from './constants/error';
 import ParkingLot from '../entities/ParkingLot';
 
 class CheckInInteractor {
-  constructor(private checkInRepository: CheckInRepository, private parkingLotRepository: ParkingLotRepository) {}
+  constructor(
+    private readonly checkInRepository: CheckInRepository,
+    private readonly parkingLotRepository: ParkingLotRepository
+  ) {}
 
   public async create(checkIn: CheckIn): Promise<CheckIn> {
     try {

@@ -10,7 +10,7 @@ import phoneUtil from '../../utils/phoneNumberUtil';
 
 
 class ParkingLotInteractor {
-  constructor(private parkingLotRepository: ParkingLotRepository) {}
+  constructor(private readonly parkingLotRepository: ParkingLotRepository) {}
 
   public async create(parkingLot: ParkingLot): Promise<ParkingLot> {
     try {
