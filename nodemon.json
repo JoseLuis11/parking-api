@@ -1,5 +1,6 @@
 {
-  "watch": ["src", "tsconfig.json", "package.json"],
-  "ext": "js,ts",
+  "watch": ["src", "tsconfig.json", "package.json", "nodemon.json"],
+  "ext": "ts",
+  "ignore": ["src/**/*.spec.ts"],
   "exec": "ts-node ./src/index.ts"
 }

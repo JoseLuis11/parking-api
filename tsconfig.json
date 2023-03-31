@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2021",
-    "module": "esnext",
-    "lib": ["es2021"],
-    "allowJs": true,
+    "target": "es6",
+    "module": "commonjs",
     "outDir": "build",
     "rootDir": "src",
     "strict": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true
   },
   "ts-node": {
-    "esm": true,
+    "esm": true
   },
   "exclude": [
     "node_modules",

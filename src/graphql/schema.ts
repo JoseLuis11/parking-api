@@ -4,9 +4,11 @@ type ParkingLot {
     id: ID!
     name: String
     spots: Int
+    availableSpots: Int
     contact: String
     parkingType: String,
-    createdAt: String
+    createdAt: String,
+    updatedAt: String
 }
 
 type CheckIn {
@@ -19,7 +21,16 @@ type CheckIn {
 
 type Query {
     parkingLots: [ParkingLot]
+    parkingLot(id: String): ParkingLot
     checkIns: [CheckIn]
+}
+
+type Mutation {
+    createParkingLot(name: String
+        spots: Int
+        availableSpots: Int
+        contact: String
+        parkingType: String,): ParkingLot
 }
 `;
 

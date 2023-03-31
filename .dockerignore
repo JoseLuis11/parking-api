@@ -8,7 +8,6 @@ logs
 npm-debug.log
 *.md
 docker-compose.yml
-.babelrc
 .eslintrc.json
 nodemon.json
 Dockerfile

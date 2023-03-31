@@ -2,26 +2,17 @@
   "name": "parking-api",
   "version": "1.0.0",
   "description": "An API able to create/modify parking lots and user check-ins to parking lots",
-  "main": "index.ts",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "start": "npm run db:migrate && node ./build",
+    "start": "node ./build",
     "build": "npx tsc",
     "dev": "nodemon",
-    "db:migrate": "npx sequelize-cli db:migrate",
-    "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
-    "db:migrate:undo:all": "npx sequelize-cli db:migrate:undo:all",
-    "db:migrate:undo:all:do": "npm run db:migrate:undo:all && npm run db:migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "José Luis Castro",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.3",
-    "@babel/node": "^7.20.7",
-    "@babel/preset-env": "^7.20.2",
     "@types/node": "^18.15.8",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
@@ -35,9 +26,6 @@
     "@apollo/server": "^4.5.0",
     "dotenv": "^16.0.3",
     "pg": "^8.10.0",
-    "reflect-metadata": "^0.1.13",
-    "sequelize": "^6.30.0",
-    "sequelize-cli": "^6.6.0",
-    "sequelize-typescript": "^2.1.5"
+    "sequelize": "^6.30.0"
   }
 }
