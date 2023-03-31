@@ -6,7 +6,7 @@ import { IncomingMessage } from 'http';
 
 const serverContext = async ({ req } : { req: IncomingMessage }) => {
   const token = req.headers.authorization?.replace('Bearer ', '') || '';
-  jwt.verify(token, jwtSecret, (err, decodedToken) => {
+  jwt.verify(token, jwtSecret, (err) => {
     if (err) {
       throw new GraphQLError(err.message, {
         extensions: {
@@ -15,7 +15,6 @@ const serverContext = async ({ req } : { req: IncomingMessage }) => {
         },
       })
     }
-    console.log('decoded token', decodedToken);
   });
   return {};
 }
