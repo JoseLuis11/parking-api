@@ -8,6 +8,9 @@ services:
       #this variable would be managed with a docker secret
       DB_URL: postgresql://postgres:pwd@postgres:5432/parking
       LOCAL_PORT: 4000
+      MAX_SPOTS_ALLOWED: 1500
+      MIN_SPOTS_ALLOWED: 50
+      JWT_SECRET: 52f29867439f77a04459002a4bc7ffb0df5fb3fea1a2e3deea9f1bc0a91e96c0
     ports:
       - "14000:4000"
     command: npm run start

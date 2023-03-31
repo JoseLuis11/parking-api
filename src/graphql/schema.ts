@@ -22,6 +22,11 @@ input ParkingLotUpdate {
     contact: String
 }
 
+input CheckInCreation {
+    parkingId: String
+    userType: String
+}
+
 type ParkingLotsResponse {
     totalItems: Int
     data: [ParkingLot]
@@ -31,8 +36,6 @@ type CheckIn {
     id: ID!
     parkingId: Int!
     userType: String!
-    checkedInAt: String!
-    checkedOutAt: String!
 }
 
 input Sort {
@@ -53,6 +56,7 @@ type Query {
 type Mutation {
     createParkingLot(parkingLot: ParkingLotCreation): ParkingLot
     updateParkingLot(id: String, parkingLot: ParkingLotUpdate): ParkingLot
+    createCheckIn(checkIn: CheckInCreation): CheckIn
 }
 `;
 

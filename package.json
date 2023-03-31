@@ -13,6 +13,7 @@
   "author": "José Luis Castro",
   "license": "ISC",
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "^18.15.8",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
@@ -28,6 +29,7 @@
     "dotenv": "^16.0.3",
     "google-libphonenumber": "^3.2.32",
     "joi": "^17.9.1",
+    "jsonwebtoken": "^9.0.0",
     "pg": "^8.10.0",
     "sequelize": "^6.30.0"
   }

@@ -1,7 +1,8 @@
 import Entity from './Entity';
+import UserType from '../enums/UserType';
 
 interface CheckIn extends Entity {
   parkingId: string;
-  checkedInAt: Date;
+  userType: UserType
 }
  export default CheckIn;

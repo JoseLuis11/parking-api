@@ -8,7 +8,9 @@ interface ParkingLotRepository extends Repository<ParkingLot, string> {
 
   update(id: string, parkingLot: ParkingLot): Promise<ParkingLot>;
 
-  findOne(id: string): Promise<ParkingLot|null>;
+  findOne(id: string): Promise<ParkingLot>;
+
+  findByName(name: string): Promise<ParkingLot | null>
 
 }
 

@@ -4,6 +4,7 @@ import { startStandaloneServer } from '@apollo/server/standalone';
 import typeDefs from './graphql/schema';
 import resolvers from './graphql/resolvers';
 import accessEnv from './utils/accessEnv';
+import serverContext from './serverContext';
 
 const server = new ApolloServer({
   typeDefs,
@@ -11,7 +12,8 @@ const server = new ApolloServer({
 });
 
 startStandaloneServer(server, {
-    listen: { port: parseInt(accessEnv('LOCAL_PORT', '4000')), },
+  listen: { port: parseInt(accessEnv('LOCAL_PORT', '4000')), },
+  context: serverContext
 }).then(({ url }) =>
   console.log(`🚀  Server ready at: ${url}`)
 )

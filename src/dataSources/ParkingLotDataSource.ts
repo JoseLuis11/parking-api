@@ -1,4 +1,4 @@
-import ParkingLotRepository from '../repositories/ParkingLot.repository';
+import ParkingLotRepository from '../repositories/ParkingLotRepository';
 import ParkingLot from '../entities/ParkingLot';
 import ParkingLotModel from './sequelize/ParkingLotModel';
 import errors from '../interactors/constants/error';
@@ -15,13 +15,23 @@ class ParkingLotDataSource implements ParkingLotRepository {
   async update(id: string, parkingLot: ParkingLot): Promise<ParkingLot> {
     const foundParkingLot = await ParkingLotModel.findByPk(id);
     if (!foundParkingLot) {
-      throw new Error(errors.ENTITY_NOT_FOUND('ParkingLot', id));
+      throw errors.ENTITY_NOT_FOUND('ParkingLot', id);
+    } else {
+      return foundParkingLot?.update({ spots: parkingLot.spots, contact: parkingLot.contact });
     }
-    return foundParkingLot?.update({ spots: parkingLot.spots, contact: parkingLot.contact });
   }
 
-  async findOne(id: string): Promise<ParkingLot|null> {
-    return await ParkingLotModel.findByPk(id);
+  async findOne(id: string): Promise<ParkingLot> {
+    const foundParkingLot = await ParkingLotModel.findByPk(id);
+    if (!foundParkingLot) {
+      throw errors.ENTITY_NOT_FOUND('ParkingLot', id);
+    } else {
+      return foundParkingLot;
+    }
+  }
+
+  async findByName(name:string): Promise<ParkingLot | null> {
+    return await ParkingLotModel.findOne({ where: { name: name } });
   }
 
 }

@@ -1,18 +1,22 @@
-import ParkingLotRepository from '../repositories/ParkingLot.repository';
+import ParkingLotRepository from '../repositories/ParkingLotRepository';
 import ParkingLot from '../entities/ParkingLot';
 import PaginatedResponse from './responses/PaginatedResponse';
-import { parkingLotCreationSchema, parkingLotUpdateSchema } from './schemaValidators/ParkingLotCreationSchema';
+import { parkingLotSchema, parkingLotUpdateSchema } from './schemaValidators/ParkingLotSchema';
 import sortedPageSchema from './schemaValidators/SortedPageSchema';
 import Sort from './pagedSortering/Sort';
 import Page from './pagedSortering/Page';
+import { GraphQLError } from 'graphql/error';
+import errors from './constants/error';
+import phoneUtil from '../utils/phoneNumberUtil';
 
 
 class ParkingLotInteractor {
   constructor(private parkingLotRepository: ParkingLotRepository) {}
 
-  public async create(parkingLot: ParkingLot): Promise<ParkingLot> {
+  public async create(parkingLot: ParkingLot): Promise<ParkingLot | GraphQLError> {
     try {
-      await parkingLotCreationSchema.validateAsync(parkingLot);
+      await parkingLotSchema.validateAsync(parkingLot);
+      await this.validateParkingLot(parkingLot);
       return await this.parkingLotRepository.create(parkingLot);
     } catch (e) {
       return e;
@@ -32,12 +36,27 @@ class ParkingLotInteractor {
     }
   }
 
-  public async update(id: string, parkingLot: ParkingLot): Promise<ParkingLot> {
+  public async update(id: string, parkingLot: ParkingLot): Promise<ParkingLot | GraphQLError> {
     try {
       await parkingLotUpdateSchema.validateAsync(parkingLot);
       return await this.parkingLotRepository.update(id, parkingLot);
     } catch (e) {
       return e;
+    }
+  }
+
+  private async validateParkingLot(parkingLot: ParkingLot) {
+    const foundParkingLot = await this.parkingLotRepository.findByName(parkingLot.name)
+    if (foundParkingLot) {
+      throw errors.PARKING_LOT_NAME_ALREADY_EXISTS(parkingLot.name);
+    }
+    this.validatePhoneNumber(parkingLot.contact);
+  }
+
+  private validatePhoneNumber(phoneNumber: string) {
+    const number = phoneUtil.parseAndKeepRawInput(phoneNumber);
+    if (!phoneUtil.isValidNumber(number)) {
+      throw errors.INVALID_CONTACT();
     }
   }
 
