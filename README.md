@@ -9,7 +9,9 @@ Use docker-compose to build the container
   docker-compose up -d --build
 ```
  <br />
+ 
 Access to the list of running containers to obtain the `CONTAINER ID`
+
 
 ```````bash
   docker ps
