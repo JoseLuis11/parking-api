@@ -26,7 +26,8 @@ You will get a table like the following one:
 
 <br /> <br />
 
-Copy the CONTAINER ID of the parking-api-server and use it in the next command <br />
+Copy the `CONTAINER ID` of the parking-api-server and use it in the next command <br />
+
 ```````bash
   docker logs 013aa1a0daac --follow
 ```````
