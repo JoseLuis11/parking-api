@@ -3,11 +3,11 @@ interface Repository<T, ID> {
 
   delete?(id: ID): Promise<boolean>;
 
-  findAll?(): Promise<T[]>;
+  findAll?(options: object): Promise<T[]>;
 
   findOne?(id: ID): Promise<T|null>;
 
-  update?(id: ID, item: T): Promise<boolean>;
+  update?(id: ID, item: T): Promise<T>;
 }
 
 export default Repository;

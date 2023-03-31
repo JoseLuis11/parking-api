@@ -23,10 +23,6 @@ const ParkingLotModel = sequelize.define<ParkingLotInstance>( 'ParkingLot', {
     type: DataTypes.INTEGER,
     allowNull: false
   },
-  availableSpots: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
   contact: {
     type: DataTypes.STRING,
     allowNull: false

@@ -4,8 +4,7 @@ import Entity from './Entity';
 interface ParkingLot extends Entity{
   name: string;
   spots: number;
-  availableSpots: number;
-  contact?: string;
+  contact: string;
   parkingType: ParkingType;
 }
 

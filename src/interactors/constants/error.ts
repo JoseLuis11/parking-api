@@ -1,6 +1,6 @@
 const errors = {
-  INVALID_TYPE: (type: object): string =>
-    'Invalid type, valid types: ' + Object.values(type)
+  INVALID_CONTACT: 'Invalid phone number',
+  ENTITY_NOT_FOUND: (entity: string, id: string) => `Entity ${entity} with id ${id} not found`
 }
 
 export default errors;

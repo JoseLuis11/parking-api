@@ -8,6 +8,8 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "useUnknownInCatchVariables": false,
+    "types": ["google-libphonenumber"]
   },
   "ts-node": {
     "esm": true
