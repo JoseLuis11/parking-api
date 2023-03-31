@@ -9,7 +9,9 @@ Use docker-compose to build the container
   docker-compose up -d --build
 ```
  <br />
+ 
 Access to the list of running containers to obtain the `CONTAINER ID`
+
 
 ```````bash
   docker ps
@@ -24,7 +26,8 @@ You will get a table like the following one:
 
 <br /> <br />
 
-Copy the CONTAINER ID of the parking-api-server and use it in the next command <br />
+Copy the `CONTAINER ID` of the parking-api-server and use it in the next command <br />
+
 ```````bash
   docker logs 013aa1a0daac --follow
 ```````
