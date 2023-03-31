@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional } from 'sequelize';
 import sequelize from './index';
-import CheckInAttributes from '../../entities/CheckIn';
+import CheckInAttributes from '../../core/entities/CheckIn';
 import ParkingLotModel from './ParkingLotModel';
 
 type CheckInCreationAttributes = Optional<CheckInAttributes, 'id'>

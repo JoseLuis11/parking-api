@@ -1,5 +1,5 @@
-import CheckInRepository from '../repositories/CheckInRepository';
-import CheckIn from '../entities/CheckIn';
+import CheckInRepository from '../core/repositories/CheckInRepository';
+import CheckIn from '../core/entities/CheckIn';
 import CheckInModel from './sequelize/CheckInModel';
 
 class CheckInDataSource implements CheckInRepository {

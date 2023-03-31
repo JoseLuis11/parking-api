@@ -1,7 +1,7 @@
-import ParkingLotRepository from '../repositories/ParkingLotRepository';
-import ParkingLot from '../entities/ParkingLot';
+import ParkingLotRepository from '../core/repositories/ParkingLotRepository';
+import ParkingLot from '../core/entities/ParkingLot';
 import ParkingLotModel from './sequelize/ParkingLotModel';
-import errors from '../interactors/constants/error';
+import errors from '../core/interactors/constants/error';
 
 class ParkingLotDataSource implements ParkingLotRepository {
   async create(parkingLot: ParkingLot): Promise<ParkingLot> {

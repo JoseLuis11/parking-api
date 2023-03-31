@@ -1,6 +1,6 @@
 import ParkingLotInteractor from './ParkingLotInteractor';
-import ParkingLotDataSource from '../dataSources/ParkingLotDataSource';
-import CheckInDataSource from '../dataSources/CheckInDataSource';
+import ParkingLotDataSource from '../../dataSources/ParkingLotDataSource';
+import CheckInDataSource from '../../dataSources/CheckInDataSource';
 import CheckInInteractor from './CheckInInteractor';
 
 const parkingLotDataSource = new ParkingLotDataSource();

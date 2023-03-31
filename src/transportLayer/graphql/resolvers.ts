@@ -1,8 +1,8 @@
-import ParkingLot from '../entities/ParkingLot';
-import { checkInInteractor, parkingLotInteractor } from '../interactors/';
-import Sort from '../interactors/pagedSortering/Sort';
-import Page from '../interactors/pagedSortering/Page';
-import CheckIn from '../entities/CheckIn';
+import ParkingLot from '../../core/entities/ParkingLot';
+import { checkInInteractor, parkingLotInteractor } from '../../core/interactors';
+import Sort from '../../core/interactors/pagedSortering/Sort';
+import Page from '../../core/interactors/pagedSortering/Page';
+import CheckIn from '../../core/entities/CheckIn';
 
 const resolvers = {
   Query: {

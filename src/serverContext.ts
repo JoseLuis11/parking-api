@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { jwtSecret } from './security/secrets';
 import { GraphQLError } from 'graphql/error';
-import http from './interactors/constants/http';
+import http from './core/interactors/constants/http';
 import { IncomingMessage } from 'http';
 
 const serverContext = async ({ req } : { req: IncomingMessage }) => {

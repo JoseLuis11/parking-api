@@ -6,7 +6,7 @@ import sortedPageSchema from './schemaValidators/SortedPageSchema';
 import Sort from './pagedSortering/Sort';
 import Page from './pagedSortering/Page';
 import errors from './constants/error';
-import phoneUtil from '../utils/phoneNumberUtil';
+import phoneUtil from '../../utils/phoneNumberUtil';
 
 
 class ParkingLotInteractor {

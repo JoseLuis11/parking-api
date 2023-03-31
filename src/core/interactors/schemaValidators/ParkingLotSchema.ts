@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import accessEnv from '../../utils/accessEnv';
+import accessEnv from '../../../utils/accessEnv';
 import ParkingType from '../../enums/ParkingType';
 
 const MAX_SPOTS_ALLOWED = Number(accessEnv('MAX_SPOTS_ALLOWED'));

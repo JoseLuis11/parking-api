@@ -1,8 +1,8 @@
 import './dotEnvInit';
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import typeDefs from './graphql/schema';
-import resolvers from './graphql/resolvers';
+import typeDefs from './transportLayer/graphql/schema';
+import resolvers from './transportLayer/graphql/resolvers';
 import accessEnv from './utils/accessEnv';
 import serverContext from './serverContext';
 
