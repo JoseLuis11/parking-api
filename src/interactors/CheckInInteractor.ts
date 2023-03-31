@@ -6,7 +6,6 @@ import ParkingType from '../enums/ParkingType';
 import UserType from '../enums/UserType';
 import errors from './constants/error';
 import ParkingLot from '../entities/ParkingLot';
-import { GraphQLError } from 'graphql/error';
 
 class CheckInInteractor {
   constructor(private checkInRepository: CheckInRepository, private parkingLotRepository: ParkingLotRepository) {}
@@ -58,7 +57,7 @@ class CheckInInteractor {
     forUserType: UserType,
     allowedDays: number[],
     today: number,
-    dayError: () => GraphQLError
+    dayError: () => Error
   ) {
     if (parkingLot.parkingType === allowedParkingType) {
       if (checkIn.userType !== forUserType) {

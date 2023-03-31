@@ -5,7 +5,6 @@ import { parkingLotSchema, parkingLotUpdateSchema } from './schemaValidators/Par
 import sortedPageSchema from './schemaValidators/SortedPageSchema';
 import Sort from './pagedSortering/Sort';
 import Page from './pagedSortering/Page';
-import { GraphQLError } from 'graphql/error';
 import errors from './constants/error';
 import phoneUtil from '../utils/phoneNumberUtil';
 
@@ -13,7 +12,7 @@ import phoneUtil from '../utils/phoneNumberUtil';
 class ParkingLotInteractor {
   constructor(private parkingLotRepository: ParkingLotRepository) {}
 
-  public async create(parkingLot: ParkingLot): Promise<ParkingLot | GraphQLError> {
+  public async create(parkingLot: ParkingLot): Promise<ParkingLot> {
     try {
       await parkingLotSchema.validateAsync(parkingLot);
       await this.validateParkingLot(parkingLot);
@@ -36,7 +35,7 @@ class ParkingLotInteractor {
     }
   }
 
-  public async update(id: string, parkingLot: ParkingLot): Promise<ParkingLot | GraphQLError> {
+  public async update(id: string, parkingLot: ParkingLot): Promise<ParkingLot> {
     try {
       await parkingLotUpdateSchema.validateAsync(parkingLot);
       return await this.parkingLotRepository.update(id, parkingLot);
